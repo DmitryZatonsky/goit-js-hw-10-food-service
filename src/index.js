@@ -18,7 +18,7 @@ const themeSwitcherRef = document.querySelector('#theme-switch-toggle');
 
 themeSwitcherRef.addEventListener('change', onCurrentTheme)
 
-bodyRef.classList.add(localStorage.getItem('Theme') ?? Theme.LIGHT);
+bodyRef.classList.add(localStorage.getItem('Theme') ? localStorage.getItem('Theme') : Theme.LIGHT);
 themeSwitcherRef.checked = localStorage.getItem('Theme') === Theme.DARK;
 
 function onCurrentTheme({ target: { checked } }) {
